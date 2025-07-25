@@ -35,7 +35,8 @@ private httpObj: any = {
 
   getAllDept(){
     // return this.http.get(this.baseURL + "GetAllCustomers");
-    return this.http.get(`${this.getBaseurl('baseURL')}GetAllCustomers`);  // Template literals are literals delimited with backtick (`) characters,
+    // Template literals are literals delimited with backtick (`) characters,
+    return this.http.get(`${this.getBaseurl('baseURL')}GetAllCustomers`);  
   }
 
   // getAllcustomer(){
