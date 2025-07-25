@@ -1,17 +1,31 @@
 import { inject, Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ServiceService {
   // userList : any[] = [];
-  
   // using injection
   // https = inject(HttpClient);
-  baseURL : string = 'https://projectapi.gerasim.in/api/RealEstate/';
+
+private httpObj: any = {
+  type:'',
+  url:'',
+  options:Object,
+};
+
+  constructor(private http: HttpClient,) { }
+
+  getBaseurl(url: string) {
+    switch (url) {
+      case 'baseUrl': return 'https://projectapi.gerasim.in/api/RealEstate/'; break;
+      default: return ''; break;
+    }
+  }
+
+  // baseURL : string = 'https://projectapi.gerasim.in/api/RealEstate/';
   // definedation injection
-  constructor( private http:HttpClient,){}
   
   // getAlluser(){
   //   this.http.get("https://jsonplaceholder.typicode.com/users").subscribe((res:any)=>{
@@ -21,7 +35,7 @@ export class ServiceService {
 
   getAllDept(){
     // return this.http.get(this.baseURL + "GetAllCustomers");
-    return this.http.get(`${this.baseURL}GetAllCustomers`);      // Template literals are literals delimited with backtick (`) characters,
+    return this.http.get(`${this.getBaseurl('baseURL')}GetAllCustomers`);  // Template literals are literals delimited with backtick (`) characters,
   }
 
   // getAllcustomer(){

@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { ServiceService } from './service.service';
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +23,7 @@ export class MasterService {
   //    "Jalgaon", "Dhule", "Nashik","Pune",
   // ]
 
-  constructor() {}
+  constructor(private apiService: ServiceService) {}
 
   getAllStates(){
     return this.states;
@@ -31,25 +32,4 @@ export class MasterService {
   getAllDistricts(){
     return this.districts;
   }
-
-  
 }
-
-
-
-// Andhra Pradesh
-// Arunachal Pradesh
-// Assam
-// Bihar
-// Chhattisgarh
-// Goa
-// Gujarat
-// Haryana
-// Himachal Pradesh
-// Jharkhand
-// Karnataka
-// Kerala
-// Maharashtra
-// Madhya Pradesh
-// Manipur
-// Meghalaya
