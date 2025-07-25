@@ -1,0 +1,68 @@
+<div class="row justify-content-center w-100 form-container ">
+    <div class="col-sm-9">
+        <h6>User Management ({{userStore.users().length}})</h6>
+        <div class="card border-0 mb-3">
+            <div class="card-body">
+                <form [formGroup]="userformGroup" (ngSubmit)="onSubmit()" #formDirective="ngForm">
+                    <div class="row gx-2">
+                        <div class="col-sm-6">
+                            <label class="form-label mb-0">Customer Name</label>
+                            <input type="text" class="form-control" formControlName="name">
+                        </div>
+                        <div class="col-sm-6 mb-2">
+                            <label class="form-label mb-0">Email Address</label>
+                            <input type="email" class="form-control" formControlName="email">
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="d-flex gap-2">
+                                <div class="w-100">
+                                    <label class="form-label mb-0">Age</label>
+                                    <input type="email" class="form-control" formControlName="age">
+                                </div>
+                                <div class="w-100">
+                                    <label class="form-label mb-0">Gender</label>
+                                    <select class="form-select" formControlName="gender">
+                                        <option selected value="0">select Gender</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 d-flex justify-content-end gap-2">
+                            <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+                            <button type="button" class="btn btn-info btn-sm" (click)="clearForm()">Clear</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <table class="table dashboard-table">
+            <thead>
+                <tr>
+                    <th>Sr. No.</th>
+                    <th>Customer Name</th>
+                    <th>Email Address</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of userStore.users(); let i=index">
+                    <td>{{i + 1}}</td>
+                    <td>{{user.name}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.age}}</td>
+                    <td>{{user.gender}}</td>
+                    <td class="d-flex gap-2">
+                        <button type="submit" class="btn btn-info btn-sm">Edit</button>
+                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

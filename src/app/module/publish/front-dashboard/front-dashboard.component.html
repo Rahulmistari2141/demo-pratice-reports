@@ -1,0 +1,133 @@
+<!-- <div class="container-fluid">
+    <button type="button" class="btn btn-primary" (click)="addRow()">Add Employee</button>
+    <form>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">
+                        <input type="checkbox" name="isCheckAll" [(ngModel)]="isCheckAll"
+                            (ngModelChange)="checkAll($event)">
+                    </th>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">City</th>
+                    <th scope="col">State</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody [formGroup]="employeeForm">
+                <ng-container formArrayName="tableRows" *ngFor="let group of getFormControls.controls; let i=index">
+                    <tr [formGroupName]="i">
+                        <td scope="row">
+                            <input type="checkbox" formControlName="ischecked">
+                        </td>
+                        <td>
+                            <input type="text" class="form-control" formControlName="firstname">
+                            <div class="text-danger" *ngIf="getFormControls.controls[i].get('firstname')?.touched">
+                                <span *ngIf="getFormControls.controls[i].get('firstname')?.errors?.['required']">Please
+                                    Required First Name</span>
+                                <span *ngIf="getFormControls.controls[i].get('firstname')?.errors?.['minlength']">Please
+                                    Required 3 charter</span>
+                            </div>
+                        </td>
+                        <td>
+                            <input type="text" class="form-control" formControlName="lastname">
+                            <div class="text-danger" *ngIf="getFormControls.controls[i].get('lastname')?.touched">
+                                <span *ngIf="getFormControls.controls[i].get('lastname')?.errors?.['required']">Please
+                                    Required Last Name</span>
+                                <span *ngIf="getFormControls.controls[i].get('lastname')?.errors?.['minlength']">Please
+                                    Required 3 charter</span>
+                            </div>
+                        </td>
+                        <td>
+                            <select class="form-control" formControlName="status" (change)="onStatusChange($event,i)">
+                                <option value="">select Status</option>
+                                <option value="active">Active</option>
+                                <option value="deactive">DeActive</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="text" class="form-control" formControlName="city">
+                            <div class="text-danger" *ngIf="getFormControls.controls[i].get('city')?.touched">
+                                <span *ngIf="getFormControls.controls[i].get('city')?.errors?.['required']">Please Enter
+                                    City</span>
+                                <span *ngIf="getFormControls.controls[i].get('city')?.errors?.['minlength']">Please
+                                    Required 3 charter</span>
+                            </div>
+                        </td>
+                        <td>
+                            <input type="text" class="form-control" formControlName="state">
+                            <div class="text-danger" *ngIf="getFormControls.controls[i].get('state')?.touched">
+                                <span *ngIf="getFormControls.controls[i].get('state')?.errors?.['required']">Please
+                                    Enter State</span>
+                                <span *ngIf="getFormControls.controls[i].get('state')?.errors?.['minlength']">Please
+                                    Required 3 charter</span>
+                            </div>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-success" (click)="removeEmployee(i)">Remove</button>
+                        </td>
+                    </tr>
+                </ng-container>
+                <ng-container>
+                    <tr>
+                        <td colspan="7">
+                            <div class="text-center">
+                                <button type="button" class="btn btn-success" [disabled]="employeeForm.invalid" (click)="saveForm()">Save Bulk Employee</button>
+                            </div>
+                        </td>
+                    </tr>
+                </ng-container>
+            </tbody>
+        </table>
+    </form>
+</div> -->
+
+
+<div id="login-wrapper">
+    <div class="container">
+        <div class="row w-100 justify-content-end">
+            <!-- <div class="col-sm-8">
+                <img src="../../../../assets/images/j-design.svg">
+                <img src="../../../../assets/images/j-s-design.svg">
+            </div> -->
+            <div class="col-sm-4">
+                <div class="login-right">
+                    <div class="login-logo">
+                        <img src="../../../../assets/images/login-logo-color.svg">
+                    </div>
+                    <div class="card login-card">
+                        <h4 class="text-center mb-4">Login</h4>
+                        <mat-form-field appearance="outline" class="w-100 mb-2">
+                            <mat-label>Email ID</mat-label>
+                            <input matInput placeholder="Email ID">
+                        </mat-form-field>
+                        <mat-form-field appearance="outline" class="w-100 mb-2">
+                            <mat-label>Password</mat-label>
+                            <input matInput placeholder="Password">
+                            <button type="button" mat-icon-button matSuffix (click)="hide = !hide"
+                                [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                                <mat-icon class="material-symbols-rounded">{{hide ? 'visibility_off'
+                                    :
+                                    'visibility'}}</mat-icon>
+                            </button>
+                        </mat-form-field>
+                        <div class="text-end">
+                            <a href="">Forgot Password</a>
+                        </div>
+                        <button mat-flat-button color="primary" class="w-100">Login</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <div id="login-wrapper">
+    <div class="login-left">
+        <img src="../../../../assets/images/VectorA.png">
+    </div>
+    <div class="login-right">
+    </div>
+</div> -->

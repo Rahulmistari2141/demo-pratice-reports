@@ -1,0 +1,39 @@
+.wrapper {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+.wrapper .sidebar {
+    width: 220px;
+    height: 100vh;
+    background-color: aliceblue;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 12;
+    transition: all 0.3s;
+    overflow: auto;
+}
+
+.wrapper .content-container {
+    width: 100%;
+    margin-left: 220px;
+}
+
+.wrapper .data-container {
+    height: calc(100vh - 80px);
+    transition: all 0.3s;
+    overflow-y: auto;
+    padding: 10px;
+    background-color: #eee;
+}
+
+#content-wrapper.active {
+  width: 100%;
+}
+
+#sidebar.active {
+  margin-left: -250px;
+}
+

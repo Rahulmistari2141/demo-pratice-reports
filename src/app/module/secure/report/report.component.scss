@@ -1,0 +1,257 @@
+.btn-sidebar {
+    position: absolute;
+    left: 133px;
+    top: 10px;
+    border-radius: 50% !important;
+    border: none !important;
+    background-color: rgb(13 110 253)!important;
+    color: #ffff !important;
+}
+
+.offcanvas {
+    max-width: 300px;
+    position: absolute !important;
+}
+
+.offcanvas.offcanvas-start{
+    box-shadow: rgba(0, 0, 0, 0.24) 3px 2px 8px;
+    left: -9px;
+    border-right: none !important;
+    height: calc(100vh - 186px);
+}
+
+.offcanvas .offcanvas-header .btn-close{
+    padding: 6px 6px 6px 6px;
+    margin-block: -2px;
+    background: rgba(153, 153, 153, 0.4509803922);
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+}
+
+.offcanvas .offcanvas-header .btn-close:focus{
+    box-shadow: none;
+    border: none;
+}
+
+.offcanvas .offcanvas-header .btn-close .fa-solid{
+    font-size: 0.85rem;
+}
+
+// .map-modal{
+//     width: 100%;
+//     max-width: calc(100% - 61px);
+//     position: absolute;
+//     top: 15px;
+//     top: calc(100% - 110px);
+//     margin-inline: 5px;
+//     border: 1px solid #dddddd !important;
+//     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+// }
+
+.map-modal{
+    width: 100%;
+    max-width: 610px;
+    position: absolute;
+    top: 15px;
+    top: calc(100% - 110px);
+    right: 49px;
+    margin-inline: 5px;
+    border: 1px solid #dddddd !important;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+
+.map-modal .btn-icon{
+    width: 36px;
+    height: 36px;
+    padding: 0px;
+}
+
+.map-modal .btn-outline-primary,
+.map-modal .btn-icon .fa-solid{
+   font-size: 14px;
+}
+   
+// .floating-menu {
+//     position: fixed;
+//     bottom: 30px;
+//     right: 30px;
+//     display: flex;
+//     flex-direction: column-reverse;
+//     align-items: center;
+//   }
+
+  /* Hide the checkbox */
+  #menu-toggle {
+    display: none;
+  }
+
+//   /* Plus icon styling */
+//   .menu-toggle {
+//     background: #ff3e6c;
+//     width: 50px;
+//     height: 50px;
+//     border-radius: 50%;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     cursor: pointer;
+//     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+//     position: relative;
+//     transition: transform 0.3s ease;
+//   }
+
+//   .menu-toggle .plus {
+//     position: relative;
+//     display: block;
+//     width: 20px;
+//     height: 2px;
+//     background: white;
+//   }
+
+//   .menu-toggle .plus::before,
+//   .menu-toggle .plus::after {
+//     content: "";
+//     position: absolute;
+//     left: 0;
+//     width: 20px;
+//     height: 2px;
+//     background: #535252;
+//     top: 0;
+//   }
+
+//   .menu-toggle .plus::before {
+//     transform: rotate(90deg);
+//   }
+
+//   /* Menu items styling */
+//   .menu-item {
+//     background: white;
+//     width: 50px;
+//     height: 50px;
+//     border-radius: 50%;
+//     margin: 10px 0;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+//     opacity: 0;
+//     transform: translateY(20px);
+//     transition: all 0.3s ease;
+//     pointer-events: none;
+//   }
+
+//   /* Show menu items when checked */
+//   #menu-toggle:checked ~ .menu-item {
+//     opacity: 1;
+//     transform: translateY(0);
+//     pointer-events: auto;
+//   }
+
+  /* Rotate plus to X when checked */
+//   #menu-toggle:checked + .menu-toggle .plus {
+//     background: transparent;
+//   }
+
+//   #menu-toggle:checked + .menu-toggle .plus::before {
+//     transform: rotate(45deg);
+//   }
+
+//   #menu-toggle:checked + .menu-toggle .plus::after {
+//     transform: rotate(-45deg);
+//   }
+
+//   .floating-menu{
+//     position: fixed;
+//     bottom: 137px;
+//     right: 47px;
+//     display: flex;
+//     flex-direction: row-reverse;
+//     align-items: center;
+//     /* margin-left: 59px; */
+//     padding: -1px;
+// }
+
+
+// .menu-item{
+//     background: white;
+//     width: 40px;
+//     height: 40px;
+//     border-radius:0 !important;
+//     margin: 10px 2px;
+//     display: flex;
+//     border: 1px solid #e1e1e1;
+//     align-items: center;
+//     justify-content: center;
+//     box-shadow: none !important;
+//     opacity: 0;
+//     transform: translateX(20px);
+//     transition: all 0.3s ease;
+//     pointer-events: none;
+//     padding: 0px 25px;
+// }
+
+.floating-menu {
+    position: absolute;
+    bottom: 57px;
+    right: -46px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+.menu-toggle{
+    background: #0d6efd;
+    width: 43px;
+    height: 37px;
+    border-radius: 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0!important;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s linear;
+    color: #faf7f7 !important;
+    box-shadow: none !important;
+    border-radius: 50% !important;
+    margin: 5px;
+}
+
+  #menu-toggle:checked ~ .menu-item{
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+}
+
+.menu-item{
+    background: white;
+    width: 100%;
+    border-radius: 0 !important;
+    margin: 10px 0px;
+    display: flex;
+    border: 1px solid #e1e1e1;
+    align-items: center;
+    justify-content: center;
+    box-shadow: none !important;
+    column-gap: 8px;
+    opacity: 0;
+    transform: translateX(20px);
+    transition: all 0.3s ease;
+    pointer-events: none;
+    padding: 2px 2px;
+}
+
+/* Toggle icon */
+  .menu-toggle .fa-xmark {
+    display: none;
+  }
+
+  #menu-toggle:checked + .menu-toggle .fa-bars {
+    display: none;
+  }
+
+  #menu-toggle:checked + .menu-toggle .fa-xmark {
+    display: block;
+  }

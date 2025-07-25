@@ -1,0 +1,170 @@
+<div class="card plain-card">
+    <div class="card-header">
+        <h6 class="mb-0 fw-semibold">Registration Form</h6>
+    </div>
+    <div class="card-body">
+        <div class="row g-3 form-container">
+            <div class="col-sm-5 border-end">
+                <form [formGroup]="userformGroup" (ngSubmit)="onSubmit()">
+                    <div class="row gx-2 gy-3">
+                        <div class="col-sm-6">
+                            <!-- <label class="form-label" >Full Name</label> -->
+                            <input type="text" class="form-control" placeholder="Full Name" formControlName="fullName" minlength="2" maxlength="50">
+                            <span class="text-danger" *ngIf="userformGroup.get('fullName')?.invalid && userformGroup.get('fullName')?.touched">
+                                Enter the Full name is required
+                            </span>
+                        </div>
+                        <div class="col-sm-6">
+                            <!-- <label class="form-label">Email address</label> -->
+                            <input type="email" class="form-control" placeholder="Email Address" formControlName="emailAddress" minlength="2" maxlength="25">
+                            <span class="text-danger" *ngIf="userformGroup.get('emailAddress')?.invalid && userformGroup.get('emailAddress')?.touched">
+                                Enter the Email ID is required
+                            </span>
+                        </div>
+                        <div class="col-sm-6">
+                            <!-- <label class="form-label">Moblie No.</label> -->
+                            <input type="text" class="form-control" placeholder="Moblie No." formControlName="moblieNo" maxlength="10">
+                            <span class="text-danger" *ngIf="userformGroup.get('moblieNo')?.hasError?.('required') && userformGroup.get('moblieNo')?.touched">
+                                Enter the Mobile No. is required
+                            </span>
+                            <span class="text-danger"
+                                *ngIf="userformGroup.get('moblieNo')?.hasError?.('pattern') && userformGroup.get('moblieNo')?.touched">
+                                Enter a valid mobile number (starts with 6-9 and has 10 digits).
+                            </span>
+                        </div>
+                        <div class="col-sm-6 d-flex align-items-center">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" value="male" formControlName="gender">
+                                <label class="form-check-label" for="inlineRadio1">Male</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" value="female" formControlName="gender">
+                                <label class="form-check-label" for="inlineRadio2">Female</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <!-- <label class="form-label">State</label> -->
+                            <select class="form-select" aria-label="Default select example" formControlName="state">
+                                <option [ngValue]="" disabled selected>Select State</option>
+                                <option [ngValue]="states" *ngFor="let states of stateArray">{{states.name}}</option>
+                            </select>
+                            <span class="text-danger" *ngIf="userformGroup.get('state')?.invalid && userformGroup.get('state')?.touched">
+                               Select the State is required
+                            </span>
+                        </div>
+                        <div class="col-sm-6">
+                            <!-- <label class="form-label">District</label> -->
+                            <select class="form-select" aria-label="Default select example" formControlName="district">
+                                 <option [ngValue]="" disabled selected>Select District</option>
+                                <option [ngValue]="districts" *ngFor="let districts of districtArray">{{districts.name}}</option>
+                            </select>
+                            <span class="text-danger" *ngIf="userformGroup.get('district')?.invalid && userformGroup.get('district')?.touched">
+                               Select the District is required
+                            </span>
+                        </div>
+                        <!-- <div class="col-sm-6">
+                            <label class="form-label">Taluka</label>
+                            <input type="text" class="form-control" formControlName="taluka">
+                        </div> -->
+                        <div class="col-sm-6">
+                             <!-- <label class="form-label">Village</label> -->
+                            <select class="form-select" aria-label="Default select example" formControlName="village">
+                                <option [value]="null" disabled >Select Village</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                            <span class="text-danger" *ngIf="userformGroup.get('village')?.invalid && userformGroup.get('village')?.touched">
+                               Select the Village is required
+                            </span>
+                            <!-- <label class="form-label">Village</label>
+                            <input type="text" class="form-control" formControlName="village"> -->
+                        </div>
+                        <div class="col-sm-6">
+                            <!-- <label class="form-label">Pin Code</label> -->
+                            <input type="text" class="form-control" placeholder="Pin Code" formControlName="pinCode" maxlength="6">
+                             <span class="text-danger" *ngIf="userformGroup.get('pinCode')?.invalid && userformGroup.get('pinCode')?.touched">
+                               Select the Pincode is required
+                            </span>
+                        </div>
+                        <div class="col-sm d-flex align-items-end justify-content-end gap-2">
+                            <button type="button" class="btn bg-primary text-white">Cancel</button>
+                            <button type="submit" class="btn bg-primary text-white">{{ editMode ? 'Update' : 'Submit' }}</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-sm-7">
+                <div class="row gx-2 gy-3">
+                    <div class="col-sm-3">
+                        <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="exampleFormControlInput1"
+                            placeholder="name@example.com">
+                    </div>
+                    <div class="col-sm-3">
+                        <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="exampleFormControlInput1"
+                            placeholder="name@example.com">
+                    </div>
+                    <div class="col-sm-3">
+                        <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="exampleFormControlInput1"
+                            placeholder="name@example.com">
+                    </div>
+                    <div class="col-sm-3">
+                        <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="exampleFormControlInput1"
+                            placeholder="name@example.com">
+                    </div>
+                    <div class="col-sm-3 d-flex justify-content-end gap-2 w-100">
+                        <button type="button" class="btn btn-outline-primary">Clear</button>
+                        <button type="button" class="btn bg-primary text-white">Search</button>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-sm">
+                        <div class="table-responsive">
+                            <table class="table dashboard-table">
+                                <thead>
+                                    <tr>
+                                        <th>Sr. No.</th>
+                                        <th>Name</th>
+                                        <th>Mobile No.</th>
+                                        <th>Email ID</th>
+                                        <th>Action</th>
+                                        <th>Delete</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let storedUsers of storedUsersData; let i=index">
+                                        <td>{{i + 1}}</td>
+                                        <td>{{storedUsers.fullName}}</td>
+                                        <td>{{storedUsers.emailAddress}}</td>
+                                        <td>{{storedUsers.moblieNo}}</td>
+                                        <td>{{ storedUsers.gender }}</td>
+      <!-- <td>{{ storedUsers.stateName }}</td>
+      <td>{{ storedUsers.districtName }}</td> -->
+                                        <td>
+                                            <div class="d-flex gap-2">
+                                                <button type="button" class="btn btn-outline-primary" (click)="updateUser(i)">
+                                                    <i class="fa-solid fa-pen-to-square"></i>
+                                                </button>
+                                                <button type="button" class="btn btn-outline-primary" (click)="delete(i)">
+                                                    <i class="fa-solid fa-trash"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- <button (click)="toggle()">click</button>
+        <p *ngIf="expression">welcome-1</p>
+        <p [ngStyle]="{'font-size.rem':1}" *ngIf="!expression">welcome-2</p> -->
+    </div>
+</div>

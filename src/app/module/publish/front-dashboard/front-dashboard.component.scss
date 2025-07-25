@@ -1,0 +1,80 @@
+#login-wrapper{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image:url("../../../../assets/images/je-image.svg"),url("../../../../assets/images/Groupbg.svg");
+    background-position: 0px 0px, center;
+    background-repeat: no-repeat;
+    background-size: 40rem, auto;
+    position: relative;
+}
+
+// #login-wrapper{
+//     width: 100%;
+//     height: 100%;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     background: linear-gradient(327deg, rgb(249, 221, 128) 0%, rgb(244, 187, 0) 44%, rgb(244, 107, 0) 77%),url("../../../../assets/images/Group1.svg");
+//     background-position: 0 0, center;
+//     background-repeat: no-repeat;
+//     background-size: 50%, 100%;
+//     position: relative;
+// }
+
+#login-wrapper .login-card{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px;
+    border: none !important;
+    border-radius: 10px;
+    background-color: rgba(253, 242, 205, 0.98);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+// #login-wrapper .login-left{
+//     width: 95vw;
+//     height: 100vh;
+//     background-image:url("../../../../assets/images/Vector.svg");
+//     background-position: center;
+//     background-repeat: no-repeat;
+//     background-size: 100%;
+//     z-index: -1;
+//     position: absolute;
+//     left: 0;
+//     top: 0;
+// }
+
+// #login-wrapper .login-right{
+//     width: 100%;
+//     padding: 10px 25px;
+// }
+
+#login-wrapper .login-logo{
+    text-align: center;
+    margin-bottom: 44px;
+}
+
+#login-wrapper .login-logo img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+
+
+// #login-wrapper{
+//     width: 100%;
+//     height: 100vh;
+//     display: flex;
+//     background-image: url("../../../../assets/images/Group1.svg");
+//     background-position: center;
+//     background-repeat: no-repeat;
+//     background-size: cover;
+// }
+
