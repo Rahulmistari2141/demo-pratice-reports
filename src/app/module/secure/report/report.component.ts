@@ -23,6 +23,7 @@ import { userStore } from 'src/app/core/store/user-store';
 export class ReportComponent implements OnInit {
   userformGroup!: FormGroup;
   userStore : userStore;
+  locationArray = new Array();
   @ViewChild('formDirective') private formDirective!: NgForm;
 
   constructor(private fb: FormBuilder) {
@@ -52,5 +53,27 @@ export class ReportComponent implements OnInit {
   clearForm(){
     this.formDirective.reset();
   }
+
+  // getLocationList(){
+  //   let distId = this.filterForm.getRawValue().districtId || 0;
+  //   this.apiService.setHttp('GET', 'MP/Master/GetDistrictwiseLocation?DistrictId=' + distId, false, false, false, 'baseUrl');
+  //   this.subscription.add(
+  //     this.apiService.getHttp().subscribe({
+  //       next:(res: any) => {
+  //         if(res.statusCode == "200"){
+  //           this.locationArray = res.responseData;
+  //           this.searchLocationFilter();
+  //         }else{
+  //            this.locationArray = [];
+  //            this.statusCode == 404 ? '': this.errorService.handelError(res.statusCode);
+  //         }
+  //       },
+  //       error:(e: any) => {
+  //         this.dashboardCountData = []; 
+  //         this.errorService.handelError(e.status);
+  //       }
+  //     })
+  //   )
+  // }
 
 }
