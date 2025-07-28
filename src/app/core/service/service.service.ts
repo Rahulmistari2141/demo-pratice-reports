@@ -19,7 +19,8 @@ private httpObj: any = {
 
   getBaseurl(url: string) {
     switch (url) {
-      case 'baseUrl': return 'https://projectapi.gerasim.in/api/RealEstate/'; break;
+      // case 'baseUrl': return 'https://projectapi.gerasim.in/api/RealEstate/'; break;
+      case 'baseUrl': return 'https://freeapi.miniprojectideas.com/'; break;
       default: return ''; break;
     }
   }
