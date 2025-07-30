@@ -22,16 +22,22 @@ import { userStore } from 'src/app/core/store/user-store';
 
 export class ReportComponent implements OnInit {
   userformGroup!: FormGroup;
-  userStore : userStore;
+  userStore: userStore;
   locationArray = new Array();
   @ViewChild('formDirective') private formDirective!: NgForm;
 
   constructor(private fb: FormBuilder) {
     this.userStore = new userStore();
-   }
+  }
 
   ngOnInit(): void {
     this.defaultForm();
+    this.userformGroup.get('organization')?.valueChanges.subscribe((val: any) => {
+      // this.getProductCategory(val);
+    })
+    this.userformGroup.get('inventoryproductCategorydropdown')?.valueChanges.subscribe((val: any) => {
+      // this.getProductVal(val);
+    })
   };
 
   defaultForm() {
@@ -43,14 +49,14 @@ export class ReportComponent implements OnInit {
     });
   }
 
-  onSubmit(){
+  onSubmit() {
     const userForm = this.userformGroup.value;
     // console.log(userForm);
     this.userStore.addUser(userForm);
     this.clearForm();
   }
 
-  clearForm(){
+  clearForm() {
     this.formDirective.reset();
   }
 

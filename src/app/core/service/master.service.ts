@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ServiceService } from './service.service';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -31,5 +32,41 @@ export class MasterService {
 
   getAllDistricts(){
     return this.districts;
+  }
+
+  getAllState(){
+    return new Observable((obj) => {
+      this.apiService.setHttp('GET', 'MP/Master/GetAllState', false, false, false, 'baseUrl');
+      this.apiService.getHttp().subscribe({
+        next: (res: any) => {
+          if (res.statusCode === '200') {
+            obj.next(res.responseData);
+          } else {
+            obj.error(res.statusCode);
+          }
+        },
+        error: (err: any) => {
+          obj.error(err);
+        }
+      });
+    })
+  }
+
+  getAllStateByID(id: number){
+    return new Observable((obj) => {
+      this.apiService.setHttp('GET', 'MP/Master/GetAllState?stateId=' + id, false, false, false, 'baseUrl');
+      this.apiService.getHttp().subscribe({
+        next: (res: any) => {
+          if (res.statusCode === '200') {
+            obj.next(res.responseData);
+          } else {
+            obj.error(res.statusCode);
+          }
+        },
+        error: (err: any) => {
+          obj.error(err);
+        }
+      });
+    })
   }
 }
